@@ -1,0 +1,11 @@
+<div class="calcContainer">
+     <div class="calculator">
+          <div class="display"><input type="text" name="input" id="input" placeholder="0" disabled [(ngModel)]="input"></div>
+          <div class="buttons">
+               <button (click)="clear()">AC</button>
+               <button *ngFor="let btn of calcBtns" (click)="btn.action()" [disabled]="btn.disabled">{{btn.text}}</button>
+               <button (click)="answer()" id="ans" [disabled]="disabled">ANS</button>
+               <button (click)="eql()" id="equals">=</button>
+          </div>
+     </div>
+</div>
