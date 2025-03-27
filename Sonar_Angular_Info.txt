@@ -1,0 +1,30 @@
+-> Download sonar-scanner from this link: 
+https://docs.sonarsource.com/sonarqube-server/9.6/analyzing-source-code/scanners/sonarscanner/
+
+set environment variable of that folder
+
+Open C:\Users\mital.patel\sonar-scanner-6.2.1.4610-windows-x64\conf\sonar-scanner.properties
+
+#----- SonarQube server URL (default to SonarCloud)
+sonar.host.url=http://localhost:9000/
+sonar.token=TOKEN
+
+Create file named "sonar-project-properties"
+sonar.projectKey=myapp
+sonar,projectName=myapp
+sonar.sources=src
+sonar.version=1.0
+sonar.exclude=**/node_modules
+
+=> Token "Sonar_Angular": TOKEN
+
+=> This package is available on npm as: sonarqube-scanner
+
+To add code analysis to your build files, simply add the package to your project dev dependencies:
+->  npm install -D sonarqube-scanner
+
+To install the scanner globally and be able to run analyses on the command line:
+-> npm install -g sonarqube-scanner
+
+-> Run command: sonar-scanner.bat
+-> sonar-scanner -D"sonar.projectKey=Sonar_Angular" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=sqp_724c7f6ee0ad44a0b2c2630ec406f52385c1f87f"
